@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "tensor-lab-144-ryan-vo",
+  "owner": "A220man",
+  "email": "ryandtvo@gmail.com",
+  "domain": "AI/ML developer tools",
+  "summary": "Work in progress: tensor-lab-144-ryan-vo",
+  "workflows": [
+    "Scan Skills/**/SKILL.md and validate YAML frontmatter compliance with Agent Skills spec",
+    "Extract legacy metadata from ## Metadata sections and generate compliant frontmatter",
+    "Enforce 1024-character description limit and detect attacker.com placeholder usage"
+  ],
+  "auth": "oidc-keycloak-saml-broker",
+  "llm_providers": [
+    "openai-compatible",
+    "anthropic",
+    "gemini",
+    "ollama"
+  ],
+  "status": "work-in-progress"
+}
