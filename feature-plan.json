@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "skeleton-and-core-workflow",
+  "current_feature": "skill-frontmatter-fixer",
   "features": [
     {
       "id": "skeleton-and-core-workflow",
@@ -42,7 +42,7 @@
     {
       "id": "skill-frontmatter-fixer",
       "title": "Automated frontmatter repair for 28 legacy SKILL.md files",
-      "status": "planned",
+      "status": "done",
       "acceptance": [
         "CLI tool scans Skills/**/SKILL.md and detects missing frontmatter",
         "Extracts name from directory and description from ## Description section",
