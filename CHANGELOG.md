@@ -1,10 +1,28 @@
 # Changelog
 
+## 1.1.0 — work-in-progress checkpoint
+
+Partial code published for continued development. Known issues: STATUS.md.
+
 ## 1.0.0 — work-in-progress checkpoint
 
 Partial code published for continued development. Known issues: STATUS.md.
 
 All notable changes to this project will be documented in this file.
+
+## [1.0.1] - 2026-10-30
+
+### Added
+- Frontmatter fixer service: scans Skills/**/SKILL.md, detects missing/incomplete frontmatter
+- Legacy metadata extraction from **Skill Name** and ## Description sections
+- Fallback to directory name for skill name extraction
+- Frontmatter generation and file fixing (dry-run and write modes)
+- Comprehensive test coverage for frontmatter fixer
+
+### Fixed
+- Handle incomplete frontmatter (missing name/description) with proper validation status
+- Prefer legacy extraction over incomplete frontmatter when fixing files
+
 
 ## [1.0.0] - 2026-10-23
 

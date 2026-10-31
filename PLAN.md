@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-skeleton-and-core-workflow
+skill-frontmatter-fixer
 
 ## Roadmap
 
@@ -27,7 +27,7 @@ Tests: `backend/tests/test_skill_validator.py`, `frontend/src/components/SkillLi
 
 ### skill-frontmatter-fixer — Automated frontmatter repair for 28 legacy SKILL.md files
 
-Status: planned
+Status: done
 
 Acceptance:
 - CLI tool scans Skills/**/SKILL.md and detects missing frontmatter
