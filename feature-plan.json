@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "skill-frontmatter-fixer",
+  "current_feature": "description-length-validator",
   "features": [
     {
       "id": "skeleton-and-core-workflow",
@@ -60,7 +60,7 @@
     {
       "id": "description-length-validator",
       "title": "Description length validator for 1024-char spec limit",
-      "status": "planned",
+      "status": "done",
       "acceptance": [
         "Validates description field <= 1024 characters",
         "Reports all 18 over-limit skills with character counts",
