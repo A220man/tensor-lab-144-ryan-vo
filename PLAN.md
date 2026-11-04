@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-skill-frontmatter-fixer
+description-length-validator
 
 ## Roadmap
 
@@ -41,7 +41,7 @@ Tests: `backend/tests/test_frontmatter_fixer.py`
 
 ### description-length-validator — Description length validator for 1024-char spec limit
 
-Status: planned
+Status: done
 
 Acceptance:
 - Validates description field <= 1024 characters

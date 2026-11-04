@@ -1,8 +1,21 @@
 # Changelog
 
+## 1.2.0 — work-in-progress checkpoint
+
+Partial code published for continued development. Known issues: STATUS.md.
+
 ## 1.1.0 — work-in-progress checkpoint
 
 Partial code published for continued development. Known issues: STATUS.md.
+
+### Added
+- Description length validator service: validates skill description <= 1024 characters
+- Standalone DescriptionValidator class with validate_skill, validate_all, check_description_lengths
+- Report generation for over-limit descriptions with character counts and previews
+- Comprehensive test coverage for description validator (12 tests)
+
+### Tests
+- All 34 backend tests pass (12 new + 22 existing)
 
 ## 1.0.0 — work-in-progress checkpoint
 
