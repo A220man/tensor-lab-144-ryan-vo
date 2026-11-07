@@ -1,8 +1,23 @@
 # Changelog
 
+## 1.3.0 — work-in-progress checkpoint
+
+Partial code published for continued development. Known issues: STATUS.md.
+
 ## 1.2.0 — work-in-progress checkpoint
 
 Partial code published for continued development. Known issues: STATUS.md.
+
+### Added
+- Attacker.com placeholder sanitizer service: scans SKILL.md files for attacker.com references
+- Context-aware classification: C2 callbacks, exfiltration, shell callbacks → attacker.invalid; benign demos → attacker.example
+- Standalone PlaceholderSanitizer class with sanitize_file, sanitize_all, generate_report
+- Dry-run and apply modes for safe preview before modification
+- Comprehensive test coverage for placeholder sanitizer (17 tests)
+
+### Tests
+- All 51 backend tests pass (17 new + 34 existing)
+- All 6 frontend tests pass
 
 ## 1.1.0 — work-in-progress checkpoint
 
