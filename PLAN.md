@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-description-length-validator
+attacker-placeholder-sanitizer
 
 ## Roadmap
 
@@ -54,7 +54,7 @@ Tests: `backend/tests/test_description_validator.py`
 
 ### attacker-placeholder-sanitizer — Attacker.com placeholder replacement with RFC-reserved domains
 
-Status: planned
+Status: done
 
 Acceptance:
 - Scans all SKILL.md files for attacker.com references

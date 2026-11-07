@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "description-length-validator",
+  "current_feature": "attacker-placeholder-sanitizer",
   "features": [
     {
       "id": "skeleton-and-core-workflow",
@@ -76,7 +76,7 @@
     {
       "id": "attacker-placeholder-sanitizer",
       "title": "Attacker.com placeholder replacement with RFC-reserved domains",
-      "status": "planned",
+      "status": "done",
       "acceptance": [
         "Scans all SKILL.md files for attacker.com references",
         "Replaces C2/exfil/shell callbacks with attacker.invalid",
