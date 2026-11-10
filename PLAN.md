@@ -61,6 +61,7 @@ Acceptance:
 - Replaces C2/exfil/shell callbacks with attacker.invalid
 - Replaces benign URL demos with attacker.example
 - Preserves legitimate content
+- Uses multi-line context (headings, descriptions) for accurate placeholder classification
 
 Implementation: `backend/app/services/placeholder_sanitizer.py`
 

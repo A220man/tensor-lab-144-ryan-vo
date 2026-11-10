@@ -1,9 +1,22 @@
 # Changelog
 
+## 1.4.0 — work-in-progress checkpoint
+
+Partial code published for continued development. Known issues: STATUS.md.
+
 ## 1.3.0 — work-in-progress checkpoint
 
 Partial code published for continued development. Known issues: STATUS.md.
 
+### Enhanced
+- Placeholder sanitizer: multi-line context support for accurate classification
+  - Uses headings and descriptions from previous lines (up to 3 lines, stops at blank lines or other placeholders)
+  - Prevents cross-contamination between adjacent placeholder lines
+  - Fixes misclassification when context (e.g., "## C2 Callback Configuration") is on a separate line from the URL
+
+### Tests
+- Added 3 new test cases for multi-line context behavior
+- All 54 backend tests pass (3 new + 51 existing)
 ## 1.2.0 — work-in-progress checkpoint
 
 Partial code published for continued development. Known issues: STATUS.md.

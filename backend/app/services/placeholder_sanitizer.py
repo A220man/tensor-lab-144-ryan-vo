@@ -139,8 +139,21 @@ class PlaceholderSanitizer:
 
         for line_num, line in enumerate(lines, 1):
             for match in self.ATTACKER_COM_PATTERN.finditer(line):
-                # Context is the current line (for classification)
-                context = line
+                # Context: current line + relevant previous lines (headings, descriptions)
+                # Stop at blank line or another attacker.com line
+                context_lines = [line]
+                for i in range(line_num - 2, -1, -1):  # 0-indexed, go backwards
+                    prev_line = lines[i]
+                    if not prev_line.strip():
+                        break  # Stop at blank line
+                    if self.ATTACKER_COM_PATTERN.search(prev_line):
+                        break  # Stop at another placeholder line
+                    context_lines.insert(0, prev_line)
+                    # Limit to reasonable context (heading + 2 descriptive lines)
+                    if len(context_lines) >= 4:
+                        break
+
+                context = "\n".join(context_lines)
 
                 placeholder_type, replacement_domain = self._classify_placeholder(context)
 
