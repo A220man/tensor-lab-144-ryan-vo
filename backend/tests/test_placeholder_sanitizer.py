@@ -234,7 +234,46 @@ Example: http://attacker.com
 
         assert len(result.matches) == 1
         assert "Callback to attacker.com" in result.matches[0].context_line
+    def test_multiline_context_heading(self, sanitizer):
+        """Test classification uses heading from previous line."""
+        content = """## C2 Callback Configuration
+attacker.com
+More content"""
+        skill = self._make_skill(content)
+        result = sanitizer.sanitize_file(skill)
 
+        assert len(result.matches) == 1
+        match = result.matches[0]
+        assert match.line_number == 2
+        assert match.placeholder_type == PlaceholderType.C2_CALLBACK
+        assert match.replacement_domain == ReplacementDomain.ATTACKER_INVALID
+
+    def test_multiline_context_stops_at_blank_line(self, sanitizer):
+        """Test context stops at blank line."""
+        content = """## C2 Callback Configuration
+
+attacker.com"""
+        skill = self._make_skill(content)
+        result = sanitizer.sanitize_file(skill)
+
+        assert len(result.matches) == 1
+        match = result.matches[0]
+        # Should be UNKNOWN since blank line separates context
+        assert match.placeholder_type == PlaceholderType.UNKNOWN
+        assert match.replacement_domain == ReplacementDomain.ATTACKER_INVALID
+
+    def test_multiline_context_stops_at_other_placeholder(self, sanitizer):
+        """Test context stops at another attacker.com line."""
+        content = """C2 server: attacker.com
+Exfil to: attacker.com"""
+        skill = self._make_skill(content)
+        result = sanitizer.sanitize_file(skill)
+
+        assert len(result.matches) == 2
+        # First should be C2_CALLBACK
+        assert result.matches[0].placeholder_type == PlaceholderType.C2_CALLBACK
+        # Second should be EXFILTRATION (not contaminated by first line's C2)
+        assert result.matches[1].placeholder_type == PlaceholderType.EXFILTRATION
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
