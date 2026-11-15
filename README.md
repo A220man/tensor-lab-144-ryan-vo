@@ -1,5 +1,7 @@
 # tensor-lab-144-ryan-vo | Ryan Vo | AI & Machine Learning
 
+Current version: `1.5.0`.
+
 > Work in progress. This checkpoint may be incomplete or fail tests. See PLAN.md and STATUS.md before use.
 
 
