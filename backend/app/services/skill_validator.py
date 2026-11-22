@@ -25,7 +25,7 @@ class SkillValidator:
         if not self.skills_root.exists():
             return skill_files
 
-        for skill_md in self.skills_root.rglob("SKILL.md"):
+        for skill_md in self.skills_root.rglob("*.md"):
             relative_path = skill_md.relative_to(self.skills_root)
             category = relative_path.parts[0] if len(relative_path.parts) > 1 else "unknown"
 
