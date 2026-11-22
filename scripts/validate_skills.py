@@ -4,7 +4,10 @@ import sys
 from pathlib import Path
 from typing import List
 
-from app.models.skill import SkillFile, SkillMetadata, SkillValidationStatus, SkillValidator
+from app.services.skill_validator import SkillValidator
+
+# Expected skill count from README badge
+EXPECTED_SKILL_COUNT = 78
 
 
 def main() -> int:
@@ -59,6 +62,15 @@ def main() -> int:
         issues.append(
             f"{result.missing_description} skill{'s' if result.missing_description != 1 else ''} "
             f"missing description in frontmatter"
+        )
+        exit_code = 1
+
+    # Validate skill count matches README badge
+    skill_count_diff = result.total_files - EXPECTED_SKILL_COUNT
+    if skill_count_diff != 0:
+        issues.append(
+            f"skill count mismatch: found {result.total_files}, expected {EXPECTED_SKILL_COUNT} "
+            f"(diff: {skill_count_diff})"
         )
         exit_code = 1
 
